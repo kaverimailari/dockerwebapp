@@ -4,14 +4,14 @@ services:
  devopsdb:
    image: kaveridevops/myapp:appimage
    ports:
-     - "4444:3306"
+     - "4444:8086"
    deploy:
      replicas: 2
 
  application:
    image: kaveridevops/mydb:dbimage
    ports:
-     - "9999:8080"
+     - "9999:3306"
    depends_on:
      - "devopsdb"
    deploy:
